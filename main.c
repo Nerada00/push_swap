@@ -9,31 +9,29 @@
 /*   Updated: 2023/12/21 06:00:32 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+// int min -2147483648
+// int max 2147483647
+// check si les arguements sont corrects
+    // rien a part des chiffres
+    // check intmin intmax
+    // pas de doublons
+    // au moins 2 nombres
+// faire les mouvements
+    // verifier que la pile nest pas vide avant de faire un mouvement
+    // tous les TESTER dans plusieurs scenarios
+//
 
 #include "push_swap.h"
 
 int main(int ac , char **av)
 {
     (void)ac;
-    char    *a = av[1];
-    char    *b = av[2];
-    char    *c = av[3];
-    t_list *list;
-    t_list *list2;
-    t_list *list3;
 
-    list = ft_lstnew(a);
-    list2 = ft_lstnew(b);
-    list3 = ft_lstnew(c);
-    ft_lstadd_back(&list, list2);
-    ft_lstadd_back(&list, list3);
-    printf("[%s] -> ", list->content);
-    printf("[%s] -> ", list->next->content);
-    printf("[%s]\n", list->next->next->content);
-
-    printf("[%s] -> ", list->content);
-    printf("[%s] -> ", list->next->content);
-    printf("[%s]\n", list->next->next->content);
+    for (int i = 1; i < ac; i++)
+    {
+        if (check_arg(av[i]) == 0)
+            return (0);
+    }
+    printf("\n");
     return (0);
 }

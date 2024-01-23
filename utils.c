@@ -13,6 +13,18 @@
 
 #include "push_swap.h"
 
+int	ft_strlentab(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 t_list	*ft_lstnew(char *content)
 {
 	t_list	*new;

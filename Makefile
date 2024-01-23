@@ -1,6 +1,8 @@
 SRCS = main.c \
        utils.c \
 	   parsing.c \
+	   ft_split.c \
+	   ft_atoi.c \
 	   
 
 OBJS = $(SRCS:.c=.o)
