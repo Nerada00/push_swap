@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:24 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/12/21 06:09:07 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/01/24 06:14:34 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ typedef struct s_list
 
 typedef struct s_data
 {
-    char    **arg;
-
+   char    **arg;
 }           t_data;
 
-
+int     ft_atoi(char const *str);
+char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(char *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-int    check_arg(char *str);
-char	**ft_split(char const *s, char c);
-int     ft_atoi(char const *str);
+
+int     lst_fill(void);
+
 int	    check_number(char *str);
-int	    ft_strlentab(char **str);
+int    check_arg(char *str, t_data *data);
 
 
 
