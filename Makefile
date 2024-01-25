@@ -4,6 +4,7 @@ SRCS = main.c \
 	   ft_split.c \
 	   ft_atoi.c \
 	   liste.c \
+	   display.c \
 	   
 
 OBJS = $(SRCS:.c=.o)
@@ -15,6 +16,8 @@ RM = rm -f
 
 all: $(NAME)
 
+##############   barre de chargement    ##############
+
 	@echo -n "EXECUTION: Compiling push_swap... "
 	@total_iterations=40; \
 	i=0; \
@@ -23,6 +26,8 @@ all: $(NAME)
 		printf "\033[32m▇\033[0m"; \
 		i=$$((i + 1)); \
 	done
+
+#header nom du programme
 	@echo
 	@echo
 	@echo "\033[36;5m =========== Compilation completed successfully.=========== \033[0m"
@@ -45,6 +50,8 @@ $(NAME): $(OBJS)
 
 clean:
 	@$(RM) $(OBJS)
+
+#header du clean
 	@echo
 	@echo "\033[35;5m =========== OBJ was removed.=========== \033[0m"
 	@echo
@@ -59,6 +66,8 @@ clean:
 fclean:
 	@$(RM) $(OBJS)
 	@$(RM) $(NAME)
+
+#header du fclean
 	@echo
 	@echo "\033[31;5m =========== All was removed.=========== \033[0m"
 	@echo

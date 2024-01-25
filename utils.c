@@ -6,13 +6,22 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/12/21 06:00:36 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/01/25 04:20:41 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
+int	ft_strlen2(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 int	ft_strlen(char *str)
 {
 	int	i;
