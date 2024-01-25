@@ -13,7 +13,7 @@
 
 #include "push_swap.h"
 
-int	ft_strlentab(char **str)
+int	ft_strlen(char *str)
 {
 	int	i;
 

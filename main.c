@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// make
+// faire un transfere dans un tab d int checker les doublons,
+// evantuel probleme avec le 0
 // int min -2147483648
 // int max 2147483647
 // check si les arguements sont corrects

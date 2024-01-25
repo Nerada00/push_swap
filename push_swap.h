@@ -28,6 +28,7 @@ typedef struct s_list
 typedef struct s_data
 {
    char    **arg;
+   int      *tab;
 }           t_data;
 
 int     ft_atoi(char const *str);
@@ -36,7 +37,8 @@ t_list	*ft_lstnew(char *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
-int     lst_fill(void);
+int     ft_strlen(char *str);
+int     tab_fill(t_data *data);
 
 int	    check_number(char *str);
 int    check_arg(char *str, t_data *data);

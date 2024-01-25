@@ -29,17 +29,20 @@ int	check_number(char *str)
 int	check_arg(char *str, t_data *data)
 {
 	int	i;
+	int	j = 0;
 
 	i = 0;
 	data->arg = ft_split(str, ' ');
 	while (data->arg[i])
 	{
-		printf("%s\n", data->arg[i]);
 		if (check_number(data->arg[i]) == 0)
 		{
 			free(data->arg[i]);
 			return (printf("Error\n"),0);
 		}
+		data->tab[i] = ft_atoi(data->arg[i]);
+		printf("%d\n", data->tab[j]);
+		j++;
 		i++;
 	}
 	free(data->arg);
