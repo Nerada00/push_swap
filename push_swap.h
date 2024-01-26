@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:24 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/01/25 04:09:31 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/01/26 05:20:38 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,15 @@ typedef struct s_data
 {
    char    **arg;
    int      *tab;
+   int      len;
 }           t_data;
 
 // Lib
 
-int     ft_atoi(char const *str);
+long int     ft_atoi(char const *str);
 char	**ft_split(char const *s, char c);
+int     ft_strlen(char *str);
+int     ft_strlen2(char **str);
 
 // Liste chainees
 
@@ -42,17 +45,12 @@ t_list	*ft_lstnew(char *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
-// len
-
-int     ft_strlen(char *str);
-int     ft_strlen2(char **str);
 
 //check
 
-void    display_tab(t_data *data);
-int     check_doublons(t_data *data);
+int     arg_to_tab(char **str, t_data *data, int ac);
+void     display_tab(t_data *data);
 int	    check_number(char *str);
-int     arg_to_tab(char *str, t_data *data);
-
+int	    check_doublons(t_data *data);
 
 #endif

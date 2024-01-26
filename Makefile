@@ -3,8 +3,7 @@ SRCS = main.c \
 	   parsing.c \
 	   ft_split.c \
 	   ft_atoi.c \
-	   liste.c \
-	   display.c \
+	   grab.c \
 	   
 
 OBJS = $(SRCS:.c=.o)

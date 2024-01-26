@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:17 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/01/25 04:14:01 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/01/26 04:43:26 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,22 @@ int	check_number(char *str)
 	return (1);
 }
 
-int	arg_to_tab(char *str, t_data *data)
+int	check_doublons(t_data *data)
 {
 	int	i;
-	int	j = 0;
-
-	i = 0;
-	data->arg = ft_split(str, ' ');
-	data->tab = malloc(sizeof(int) * ft_strlen2(data->arg));
-	while (data->arg[i])
+	int	j;
+	
+	j = 0;
+	while (j < data->len)
 	{
-		if (check_number(data->arg[i]) == 0)
+		i = j + 1;
+		while (i < data->len)
 		{
-			free(data->arg[i]);
-			return (printf("Error\n"),0);
+			if (data->tab[j] == data->tab[i])
+				return (0);
+			i++;
 		}
-		data->tab[i] = ft_atoi(data->arg[i]);
-		//printf("%d\n", data->tab[j]);
 		j++;
-		i++;
 	}
-	free(data->arg);
 	return (1);
 }
-

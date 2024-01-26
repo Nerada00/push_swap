@@ -6,15 +6,15 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:33:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2023/11/10 14:06:31 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/01/26 04:36:14 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	res;
+	long int	res;
 	int	neg;
 	int	i;
 
@@ -31,19 +31,11 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		res *= 10;
-		res += str[i] - '0';
-		i++;
-	}
+		res = res * 10 + str[i++] - '0';
+	if (res * neg >= 2147483647 || res * neg <= -2147483648)
+		{
+			printf("Erreur trop grand");
+			exit (1);
+		}
 	return (res * neg);
 }
-/*
-#include <stdio.h>
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("%d", ft_atoi(av[1]));
-}
-*/
