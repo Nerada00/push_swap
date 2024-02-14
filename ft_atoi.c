@@ -32,9 +32,9 @@ long int	ft_atoi(const char *str)
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		res = res * 10 + str[i++] - '0';
-	if (res * neg >= 2147483647 || res * neg <= -2147483648)
+	if (res * neg >= 2147483647 || res * neg <= -2147483648 || str[i] == '-' || str[i] == '+')
 		{
-			printf("Erreur trop grand");
+			printf("Erreur le programme ne prend pas de long ou de multiplicateur de signe");
 			exit (1);
 		}
 	return (res * neg);

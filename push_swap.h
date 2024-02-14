@@ -30,6 +30,8 @@ typedef struct s_data
    char    **arg;
    int      *tab;
    int      len;
+   int      num_args;
+
 }           t_data;
 
 // Lib
@@ -38,6 +40,7 @@ long int     ft_atoi(char const *str);
 char	**ft_split(char const *s, char c);
 int     ft_strlen(char *str);
 int     ft_strlen2(char **str);
+char	*ft_strcpy(char *dest, char *src);
 
 // Liste chainees
 
@@ -48,9 +51,10 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 
 //check
 
+void    grab_arg(t_data *data, int ac, char **av);
 int     arg_to_tab(char **str, t_data *data, int ac);
 void     display_tab(t_data *data);
-int	    check_number(char *str);
+int	    check_number(char **str);
 int	    check_doublons(t_data *data);
 
 #endif

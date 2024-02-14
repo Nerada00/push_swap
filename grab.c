@@ -1,5 +1,20 @@
 #include "push_swap.h"
 
+void    grab_arg(t_data *data, int ac, char **av)
+{
+    int i = 0;  
+    data->num_args = 0;
+    data->arg = malloc(sizeof(char*) * ac-1);
+    while (i < ac)
+    {
+        data->arg[i-1] = malloc(ft_strlen(av[i]) + 1);
+        ft_strcpy(data->arg[i-1], av[i]);
+        data->num_args++;
+        i++;
+    }
+}
+
+
 void display_tab(t_data *data)
 {
     int i = 0;

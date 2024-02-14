@@ -24,8 +24,21 @@
 int main(int ac , char **av)
 {
 	t_data data;
+    // int i = 1;
     if (ac > 2)
     {
+        grab_arg(&data, ac, av);
+        // data.num_args = 0;
+        // data.arg = malloc(sizeof(char*) * ac-1);
+        // while (i < ac)
+        // {
+        //     data.arg[i-1] = malloc(ft_strlen(av[i]) + 1);
+        //     ft_strcpy(data.arg[i-1], av[i]);
+        //     data.num_args++;
+        //     i++;
+        // }
+        if (check_number(data.arg) == 0)
+           return (printf("Arg contient des caractere non numerique"), 0);
         arg_to_tab(av, &data, ac);
         display_tab(&data);
         if (check_doublons(&data) == 0)
@@ -35,5 +48,5 @@ int main(int ac , char **av)
         }
     }
     else
-        printf ("Manque d'argument");
+        printf ("Entrez minimum 2 arguments\n");
 }

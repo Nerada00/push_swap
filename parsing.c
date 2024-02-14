@@ -12,15 +12,21 @@
 
 #include "push_swap.h"
 
-int	check_number(char *str)
+int	check_number(char **str)
 {
 	int 	i;
+	int		j;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
-			return (0);
+		j = 0;
+		while (str[i][j])
+		{
+			if ((str[i][j] < '0' || str[i][j] > '9') && str[i][j] != '+' && str[i][j] != '-')
+				return (0);
+			j++;
+		}
 		i++;
 	}
 	return (1);
