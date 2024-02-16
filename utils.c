@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/01/25 04:20:41 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/16 03:23:05 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-t_list	*ft_lstnew(char *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
@@ -59,6 +59,7 @@ t_list	*ft_lstnew(char *content)
 	new->next = NULL;
 	return (new);
 }
+
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -80,4 +81,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	(*new).next = *lst;
 	*lst = new;
 }
+
+
 

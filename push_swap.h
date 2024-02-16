@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:24 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/01/26 05:20:38 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/16 06:57:20 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 typedef struct s_list
 {
-    char			*content;
+    int			content;
 	struct s_list	*next;
 }           t_list;
 
@@ -44,7 +44,7 @@ char	*ft_strcpy(char *dest, char *src);
 
 // Liste chainees
 
-t_list	*ft_lstnew(char *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
@@ -56,5 +56,16 @@ int     arg_to_tab(char **str, t_data *data, int ac);
 void     display_tab(t_data *data);
 int	    check_number(char **str);
 int	    check_doublons(t_data *data);
+
+
+//mouvement
+
+void    swap_a(t_list *stack_a);
+void    swap_b(t_list *stack_b);
+void    push_b(t_list **stack_a, t_list **stack_b);
+void    push_a(t_list **stack_a, t_list **stack_b);
+void    rotate_a(t_list **stack_a);
+void    rotate_b(t_list **stack_b);
+void    reverse_rotate_a(t_list *stack_a);
 
 #endif
