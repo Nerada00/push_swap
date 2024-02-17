@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:31 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/16 07:05:49 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/17 04:10:48 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,26 @@
 
 #include "push_swap.h"
 
+void free_list(t_list *head) 
+{
+    t_list *tmp;
+    while (head) 
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
 t_list    *init_stack(t_data *data, t_list *stack_a)
 {
     t_list *node;
-    size_t  i = 0;
+    int  i = 0;
     printf("\n Liste principal avant tout mouvement\n");
-    while (data->tab[i])
+    while (i < data->len)
     {
         node = ft_lstnew(data->tab[i]);
+        if (!node)
+            return (NULL);
         ft_lstadd_back(&stack_a, node);
         i++;
         printf(" =[%d]= ", node->content);
@@ -46,32 +58,29 @@ int main(int ac , char **av)
     stack_a = NULL;
     stack_b = NULL;
 
-    stack_b = ft_lstnew(111);
+    // stack_b = ft_lstnew(111);
 
-    
     if (ac > 2)
     {
         grab_arg(&data, ac, av);
-        if (check_number(data.arg) == 0)
-           return (printf("Arg contient des caractere non numerique\n"), 0);
-        arg_to_tab(av, &data, ac);
-        if (check_doublons(&data) == 0)
+        if (parse(&data, ac, av) == 0 )
         {
-            printf("DOUBLONS\n");
-            exit(0);
+            // free(data.tab);
+            return (0);
         }
-        // display_tab(&data);
         t_list *tmp = 0;
         t_list *tmp2;
         stack_a = init_stack(&data, tmp);
-        // reverse_rotate_a(stack_a);
+        free(data.tab);
         tmp2 = stack_a;
+        free(tmp);
         printf ("\n---stack A---\n");
         while (tmp2)
         {
             printf ("{%d} -> ", tmp2->content);
             tmp2 = tmp2->next;
         }
+        free_list(stack_a);
         printf ("\n---stack B---\n");
         while (stack_b)
         {
@@ -81,4 +90,5 @@ int main(int ac , char **av)
     }
     else
         printf("Entrez minimum 2 arguments\n");
+    return (0);
 }

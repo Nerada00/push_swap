@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:33:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/01/26 04:36:14 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/17 04:55:30 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long int	ft_atoi(const char *str)
 {
 	long int	res;
-	int	neg;
-	int	i;
+	int			neg;
+	int			i;
 
 	res = 0;
 	neg = 1;
@@ -31,11 +31,10 @@ long int	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
 		res = res * 10 + str[i++] - '0';
-	if (res * neg >= 2147483647 || res * neg <= -2147483648 || str[i] == '-' || str[i] == '+')
-		{
-			printf("Erreur le programme ne prend pas de long ou de multiplicateur de signe");
-			exit (1);
-		}
+		if (res * neg > 2147483647 || res * neg < -2147483648)
+			return (30000000000);
+	}
 	return (res * neg);
 }

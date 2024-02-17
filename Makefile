@@ -4,8 +4,9 @@ SRCS = main.c \
 	   ft_split.c \
 	   ft_atoi.c \
 	   grab.c \
-	   move.c \
-	   
+	   move_swap.c \
+	   move_rotate.c \
+	   move_push.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -18,7 +19,7 @@ all: $(NAME)
 
 ##############   barre de chargement    ##############
 
-	@echo -n "EXECUTION: Compiling push_swap... "
+	@echo -n "\033[32m [EXECUTION] \033[0m: Compiling push_swap... "
 	@total_iterations=40; \
 	i=0; \
 	while [ $$i -lt $$total_iterations ]; do \
@@ -28,7 +29,7 @@ all: $(NAME)
 	done
 
 #header nom du programme
-	@echo
+	
 	@echo
 	@echo "\033[36;5m =========== Compilation completed successfully.=========== \033[0m"
 	@echo 
