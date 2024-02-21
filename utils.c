@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/16 03:23:05 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/21 02:36:20 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(int content, int pos)
 {
 	t_list	*new;
 
@@ -56,6 +56,7 @@ t_list	*ft_lstnew(int content)
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->pos = pos;
 	new->next = NULL;
 	return (new);
 }

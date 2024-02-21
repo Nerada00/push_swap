@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:31 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/17 04:10:48 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/21 05:55:00 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ void free_list(t_list *head)
         free(tmp);
     }
 }
+
+void print_stack(t_list *a)
+{
+    while (a)
+    {
+        printf("%d -> ", a->content);
+        a = a->next;
+    }
+    printf("\n");
+}
+
 t_list    *init_stack(t_data *data, t_list *stack_a)
 {
     t_list *node;
@@ -38,7 +49,7 @@ t_list    *init_stack(t_data *data, t_list *stack_a)
     printf("\n Liste principal avant tout mouvement\n");
     while (i < data->len)
     {
-        node = ft_lstnew(data->tab[i]);
+        node = ft_lstnew(data->tab[i], i);
         if (!node)
             return (NULL);
         ft_lstadd_back(&stack_a, node);
@@ -68,25 +79,18 @@ int main(int ac , char **av)
             // free(data.tab);
             return (0);
         }
-        t_list *tmp = 0;
+        t_list *tmp = stack_b;
         t_list *tmp2;
         stack_a = init_stack(&data, tmp);
+        ft_sort(&stack_a, &stack_b);
+        printf ("\n---stack A---\n");
+        print_stack(stack_a);
+        printf ("\n---stack B---\n");
+        print_stack(stack_b);
         free(data.tab);
         tmp2 = stack_a;
-        free(tmp);
-        printf ("\n---stack A---\n");
-        while (tmp2)
-        {
-            printf ("{%d} -> ", tmp2->content);
-            tmp2 = tmp2->next;
-        }
+        // free(tmp);
         free_list(stack_a);
-        printf ("\n---stack B---\n");
-        while (stack_b)
-        {
-            printf ("{%d} -> ", stack_b->content);
-            stack_b = stack_b->next;
-        }
     }
     else
         printf("Entrez minimum 2 arguments\n");

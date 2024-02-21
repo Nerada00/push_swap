@@ -7,6 +7,7 @@ SRCS = main.c \
 	   move_swap.c \
 	   move_rotate.c \
 	   move_push.c \
+	   sort.c\
 
 OBJS = $(SRCS:.c=.o)
 

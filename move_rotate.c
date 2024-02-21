@@ -14,6 +14,7 @@ void    rotate_a(t_list **stack_a)
     (*stack_a) = (*stack_a)->next;
     tmp->next = NULL;
     tmp2->next = tmp;
+    ft_update_index(*stack_a);
     printf("ra\n");
 }
 
@@ -31,6 +32,7 @@ void    rotate_b(t_list **stack_b)
     (*stack_b) = (*stack_b)->next;
     tmp->next = NULL;
     tmp2->next = tmp;
+    ft_update_index(*stack_b);
     printf("rb\n");
 
 }
@@ -58,6 +60,7 @@ void    reverse_rotate_a(t_list **stack_a)
     tmp->next = (*stack_a);
    (*stack_a) = tmp;
     tmp2->next = NULL;
+    ft_update_index(*stack_a);
     printf ("rra\n");
 }
 
@@ -76,5 +79,6 @@ void    reverse_rotate_b(t_list **stack_b)
     tmp->next = (*stack_b);
    (*stack_b) = tmp;
     tmp2->next = NULL;
+    ft_update_index(*stack_b);
     printf ("rrb\n");
 }

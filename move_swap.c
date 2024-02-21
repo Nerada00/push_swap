@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 00:27:21 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/17 01:56:17 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/21 02:51:35 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void    swap_a(t_list *stack_a)
     tmp = stack_a->content;
     stack_a->content = stack_a->next->content;
     stack_a->next->content = tmp;
+    ft_update_index(stack_a);
     printf("sa\n");
 }
 
@@ -31,6 +32,7 @@ void    swap_b(t_list *stack_b)
     tmp = stack_b->content;
     stack_b->content = stack_b->next->content;
     stack_b->next->content = tmp;
+    ft_update_index(stack_b);
     printf("sb\n");
 }
 
