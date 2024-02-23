@@ -6,16 +6,30 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/21 02:36:20 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/23 08:04:07 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
+
+int		ft_lstsize(t_list *lst)
+{
+	t_list	*current;
+	int		size;
+
+	size = 0;
+	current = lst;
+	while (current)
+	{
+		size++;
+		current = (*current).next;
+	}
+	return (size);
+}
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])
@@ -27,15 +41,6 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-int	ft_strlen2(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 int	ft_strlen(char *str)
 {
 	int	i;
@@ -61,7 +66,6 @@ t_list	*ft_lstnew(int content, int pos)
 	return (new);
 }
 
-
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
@@ -82,6 +86,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	(*new).next = *lst;
 	*lst = new;
 }
-
-
-
