@@ -6,13 +6,13 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:35 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/23 08:04:07 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/27 04:47:44 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	t_list	*current;
 	int		size;
@@ -79,10 +79,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			current = (*current).next;
 		(*current).next = new;
 	}
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	(*new).next = *lst;
-	*lst = new;
 }

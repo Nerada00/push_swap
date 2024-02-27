@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:24 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/23 08:12:41 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/27 06:12:26 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ typedef struct s_data
 	long int		*tab;
 	int				len;
 	int				num_args;
+	int				ra_rb;
+	int				rra_rrb;
+	int				rra_rb;
+	int				ra_rrb;
 
 }					t_data;
 
@@ -48,9 +52,7 @@ t_list				*ft_lstnew(int content, int pos);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
-
-
-void				ft_update_index(t_list *lst);
+void				ft_update_index(t_list **lst);
 
 // check
 
@@ -60,11 +62,14 @@ void				display_tab(t_data *data);
 int					check_number(char **str);
 int					check_doublons(t_data *data);
 int					parse(t_data *data, int ac, char **av);
+int					check_sort(t_list **stack_a);
+void				ft_putstr_fd(char *s, int fd);
+
 
 // mouvement
 
-void				swap_a(t_list *stack_a);
-void				swap_b(t_list *stack_b);
+void				swap_a(t_list **stack_a);
+void				swap_b(t_list **stack_b);
 void				push_b(t_list **stack_a, t_list **stack_b);
 void				push_a(t_list **stack_a, t_list **stack_b);
 void				rotate_a(t_list **stack_a);
@@ -73,8 +78,9 @@ void				reverse_rotate_a(t_list **stack_a);
 void				reverse_rotate_b(t_list **stack_b);
 void				rrr(t_list **stack_a, t_list **stack_b);
 void				rr(t_list *stack_a, t_list *stack_b);
-void				ss(t_list *stack_a, t_list *stack_b);
+void				ss(t_list **stack_a, t_list **stack_b);
 
+// tool
 int					ft_max(t_list *lst);
 int					ft_min(t_list *lst);
 int					target_b(t_list *stack_b, int nbr_a);
@@ -82,13 +88,18 @@ int					find_pos(t_list *a, int nb);
 int					ft_cost(t_list *a, t_list *b, int nbr_a, int nnr_b);
 void				ft_min_cost(t_list *stack_a, t_list *stack_b, int *nbr_a,
 						int *nbr_b);
+int					ft_mediane5(t_list **stack_a);
+int					target_b(t_list *stack_b, int nbr_a);
+
+// algo
 void				ft_sort(t_list **stack_a, t_list **stack_b);
-void				print_stack(t_list *a);
+void				second_part(t_list **stack_a, t_list **stack_b);
 void				ft_sort_3(t_list **stack_a);
-void 				ft_sort_5(t_list **stack_a, t_list **stack_b);
-int					check_sort(t_list **stack_a);
-int					ft_mediane(t_list **stack_a, int size);
+void				ft_sort_5(t_list **stack_a, t_list **stack_b);
 
+// cost
 
+int					sheap_cost(t_data cost);
+int					compare(int a, int b);
 
 #endif
