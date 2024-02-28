@@ -6,12 +6,11 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:17 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/27 06:15:36 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:56:12 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -86,7 +85,8 @@ int	ft_checkint(t_data *data)
 int	parse(t_data *data, int ac, char **av)
 {
 	if (check_number(data->arg) == 0)
-		return (ft_putstr_fd("Error\nArg contient des caractere non numerique\n", 2), 0);
+		return (ft_putstr_fd("Error\nArg contient des caractere non numerique\n",
+				2), 0);
 	arg_to_tab(av, data, ac);
 	if (check_doublons(data) == 0)
 	{

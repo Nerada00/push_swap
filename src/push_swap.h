@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 06:00:24 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/27 06:12:26 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/28 00:36:32 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ typedef struct s_data
 
 }					t_data;
 
+// ft_printf
+
+int					ft_printf(const char *s, ...);
+int					ft_putnbr(int nb);
+int					ft_putchar(int c);
+int					ft_putstr(char *str);
+int					ft_count(int nb);
+int					ft_print_digit(unsigned long int nb, char *base);
+int					ft_print_format(char spec, va_list ap);
+size_t				ft_strlen2(char *str);
+
 // Lib
 
 long int			ft_atoi(char const *str);
@@ -50,7 +61,6 @@ char				*ft_strcpy(char *dest, char *src);
 
 t_list				*ft_lstnew(int content, int pos);
 void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
 void				ft_update_index(t_list **lst);
 
@@ -64,7 +74,6 @@ int					check_doublons(t_data *data);
 int					parse(t_data *data, int ac, char **av);
 int					check_sort(t_list **stack_a);
 void				ft_putstr_fd(char *s, int fd);
-
 
 // mouvement
 

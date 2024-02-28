@@ -1,15 +1,17 @@
-SRCS = main.c \
-       utils.c \
-	   parsing.c \
-	   ft_split.c \
-	   ft_atoi.c \
-	   grab.c \
-	   move_swap.c \
-	   move_rotate.c \
-	   move_push.c \
-	   sort.c\
-	   cost.c\
-	   sort_tool.c\
+SRCS = src/main.c \
+       src/utils.c \
+	   src/parsing.c \
+	   src/ft_split.c \
+	   src/ft_atoi.c \
+	   src/grab.c \
+	   src/move_swap.c \
+	   src/move_rotate.c \
+	   src/move_push.c \
+	   src/sort.c \
+	   src/cost.c \
+	   src/sort_tool.c \
+	   src/printf/ft_printf.c \
+	   src/printf/ft_printf_fonction.c \
 
 OBJS = $(SRCS:.c=.o)
 

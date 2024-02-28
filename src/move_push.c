@@ -6,7 +6,7 @@
 /*   By: abdmessa <abdmessa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 04:40:17 by abdmessa          #+#    #+#             */
-/*   Updated: 2024/02/27 04:47:23 by abdmessa         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:59:05 by abdmessa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	(*stack_b) = tmp;
 	ft_update_index(stack_a);
 	ft_update_index(stack_b);
-	printf("pb\n");
+	ft_printf("pb\n");
 }
 
 void	push_a(t_list **stack_a, t_list **stack_b)
@@ -39,12 +39,12 @@ void	push_a(t_list **stack_a, t_list **stack_b)
 	(*stack_a) = tmp;
 	ft_update_index(stack_a);
 	ft_update_index(stack_b);
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	reverse_rotate_a(stack_a);
 	reverse_rotate_b(stack_b);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }
