@@ -1,4 +1,3 @@
 # Push_Swap
 
-program that sorts a linked list based on the argument entered in the parameter.
-Turkish sort
+program that sorts a linked list based on the argument entered in the parameter, Using the Turkish sort.
